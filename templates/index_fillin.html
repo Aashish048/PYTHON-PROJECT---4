@@ -1,0 +1,82 @@
+<!-- <!DOCTYPE html>
+<html>
+   <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your HTML Page</title>
+</head>
+    <body>
+        <h1>Welcome to my fabulous project</h1>
+        <p>Where do you want to go?</p>
+        <ul>
+            <li><a href="{{ url_for('about')}}"> link to the about page</a> </li>  
+            <li><a href="{{ url_for('data')}}"> link to the data page</a> </li>  
+        </ul>
+    </body>
+</html>
+ -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Work E-Pedia For Employee</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 1em;
+        }
+        nav {
+            margin-top: 20px; /* Add space between header and links */
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-right: 20px; /* Add space between links */
+        }
+        section {
+            max-width: 800px;
+            margin: auto;
+            padding: 20px;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 1em;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Work E-Pedia For Employee</h1>
+       
+    </header>
+
+    <section>
+       <h1>Welcome to Our Website</h1>
+        <p>Where do you want to go?</p>
+        <ul>
+            <li><a href="{{ url_for('about')}}">Click Me To Know More</a> </li>  
+            <li><a href="{{ url_for('data')}}">Employee's Details</a> </li>  
+        </ul>
+    </section>
+
+    <footer>
+        <p>&copy; 2023 Work E-Pedia For Employee. All rights reserved.</p>
+    </footer>
+</body>
+</html>

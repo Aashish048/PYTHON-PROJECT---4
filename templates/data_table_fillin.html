@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dataset Table</title>
+  <style>
+    table {
+      border-collapse: collapse;
+      width: 100%;
+    }
+   header {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 1em;
+        }
+        
+         footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 1em;
+/*             position: fixed; */
+            bottom: 0;
+            width: 100%;
+        }
+    th, td {
+      border: 1px solid #ddd;
+      padding: 8px;
+      text-align: left;
+    }
+    td
+      {
+       background-color: #96D4D4;
+      }
+    th {
+        
+      background-color:#15f4ee;
+    }
+
+    .hidden-row {
+      display: none;
+    }
+
+    #moreBtn {
+      
+      
+      margin-top: 10px; 
+      margin-bottom: 10px; 
+    }
+  </style>
+</head>
+<body>
+     <header>
+        <h1>Work E-Pedia For Employee</h1>
+       
+    </header>    
+<div class="table-container">
+  <h1>Employee Details</h1>
+  <p>Click the show more to view all the employee details</p>
+<table id="dataTable">
+  <thead>
+    <tr>
+        <th>Education</th>
+        <th>JoiningYear</th>
+        <th>City</th>
+        <th>PaymentTier</th>
+        <th>Age</th>
+        <th>Gender</th>
+        <th>EverBenched</th>
+        <th>ExperienceInCurrentDomain</th>
+        <th>LeaveOrNot</th>
+      <!-- Add more headers based on your dataset -->
+    </tr>
+  </thead>
+  <tbody>
+    {% for s in employees %}
+      <tr class="hidden-row">
+         <td>{{s[0]}}</td>
+         <td>{{s[1]}}</td>
+         <td>{{s[2]}}</td>
+         <td>{{s[3]}}</td>
+         <td>{{s[4]}}</td>
+         <td>{{s[5]}}</td>
+         <td>{{s[6]}}</td>
+         <td>{{s[7]}}</td>
+         <td>{{s[8]}}</td>
+      </tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+<button id="moreBtn" onclick="showMore()">Show More</button>
+</div>
+<script>
+  var hiddenRows = document.querySelectorAll('.hidden-row');
+  var moreBtn = document.getElementById('moreBtn');
+
+  function showMore() {
+    hiddenRows.forEach(function(row) {
+      row.style.display = 'table-row';
+    });
+
+    moreBtn.style.display = 'none';
+  }
+
+  // Show the first 20 rows initially
+  for (var i = 0; i < 15 && i < hiddenRows.length; i++) {
+    hiddenRows[i].style.display = 'table-row';
+  }
+
+  // Show the "More" button if there are more than 20 rows
+  if (hiddenRows.length > 15) {
+    moreBtn.style.display = 'block';
+  }
+</script>
+ <footer>
+        <p>&copy; 2023 Work E-Pedia For Employee. All rights reserved.</p>
+    </footer>
+</body>
+</html>
+
+
+
+
+
